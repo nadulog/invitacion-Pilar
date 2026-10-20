@@ -1276,3 +1276,24 @@ body.intro-is-open .audio-toggle {
     animation: none;
   }
 }
+
+/* Aviso del dress code, en el espacio libre debajo de "Elegante". */
+.dress-code__note {
+  position: absolute;
+  z-index: 2;
+  top: 81.5%;
+  left: 8%;
+  width: 84%;
+  margin: 0;
+  color: var(--gold-light);
+  font-family: "Poiret One", "Josefin Sans", sans-serif;
+  font-size: 6.4cqw;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-shadow: 0 0.4cqw 1.6cqw rgba(0, 0, 0, 0.8);
+}
+
+.dress-code__note span {
+  color: #3fae7f;
+  text-shadow: 0 0 1.4cqw rgba(63, 174, 127, 0.45);
+}
