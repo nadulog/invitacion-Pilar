@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="theme-color" content="#050505" />
+    <meta
+      name="description"
+      content="Llegó el momento de celebrar mis XV ✨ Me encantaría compartir esta gran noche con vos. ¡Te espero el 13 de noviembre en Janos Hipódromo de San Isidro!"
+    />
+    <link rel="canonical" href="https://nadulog.github.io/invitacion-Pilar/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nadulog.github.io/invitacion-Pilar/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Mis XV · Pilar" />
+    <meta property="og:title" content="Mis XV · Pilar" />
+    <meta
+      property="og:description"
+      content="Llegó el momento de celebrar mis XV ✨ Me encantaría compartir esta gran noche con vos. ¡Te espero el 13 de noviembre en Janos Hipódromo de San Isidro!"
+    />
+    <meta property="og:image" content="https://nadulog.github.io/invitacion-Pilar/assets/whatsapp-pilar.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pilar, mis XV" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mis XV · Pilar" />
+    <meta name="twitter:image" content="https://nadulog.github.io/invitacion-Pilar/assets/whatsapp-pilar.jpg" />
+    <title>Mis XV · Pilar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Jost:wght@400&family=Poiret+One&display=swap"
+    />
+    <link rel="preload" as="image" href="assets/portada.webp?v=20261020-6" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css?v=20261020-6" />
+  </head>
+  <body class="intro-is-open">
+    <div class="invitation-intro" role="dialog" aria-modal="true" aria-label="Bienvenida a los XV de Pilar">
+      <div class="invitation-intro__stage">
+        <img
+          class="invitation-intro__image"
+          src="assets/portada.webp?v=20261020-6"
+          alt="Pilar, mis XV"
+          width="941"
+          height="1672"
+        />
+        <div class="invitation-intro__actions">
+          <p class="invitation-intro__question">¿Cómo querés entrar?</p>
+          <button id="introWithMusic" class="intro-action" type="button">Entrar con música</button>
+          <button id="introWithoutMusic" class="intro-action intro-action--ghost" type="button">Entrar sin música</button>
+        </div>
+      </div>
+    </div>
+
+    <main id="invitationMain" class="invitation" tabindex="-1" aria-label="Invitación a los XV años de Pilar">
+      <section class="panel panel--cover" aria-labelledby="cover-title">
+        <div class="panel__stage">
+          <h1 id="cover-title" class="sr-only">Mis XV, Pilar</h1>
+          <img src="assets/portada.webp?v=20261020-6" alt="Pilar, mis XV" width="941" height="1672" fetchpriority="high" />
+        </div>
+      </section>
+
+      <section class="panel panel--guests" aria-labelledby="guests-title">
+        <div class="panel__stage">
+          <h2 id="guests-title" class="sr-only">Invitación personalizada</h2>
+          <img
+            src="assets/invitados.webp?v=20261020-6"
+            alt="Esta invitación fue creada especialmente para"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <div class="guests">
+            <p id="nombres-invitados" class="guests__names"></p>
+            <p id="cantidad-lugares" class="guests__places"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel--countdown" aria-labelledby="countdown-title">
+        <div class="panel__stage">
+          <h2 id="countdown-title" class="sr-only">Cada vez falta menos</h2>
+          <img
+            src="assets/cuenta-regresiva.webp?v=20261020-6"
+            alt="Cada vez falta menos"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <svg class="clock-hands" viewBox="-100 -100 200 200" aria-hidden="true">
+            <defs>
+              <linearGradient id="handGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6dc9a" />
+                <stop offset="1" stop-color="#b98b3e" />
+              </linearGradient>
+            </defs>
+            <g id="hourHand"><path d="M0 -52 L5 -8 L0 10 L-5 -8 Z" fill="url(#handGold)" /></g>
+            <g id="minuteHand"><path d="M0 -78 L3.6 -8 L0 12 L-3.6 -8 Z" fill="url(#handGold)" /></g>
+            <g id="secondHand"><line x1="0" y1="18" x2="0" y2="-84" stroke="#e8c675" stroke-width="1.4" /></g>
+            <circle r="5.5" fill="#d9b464" stroke="#0b2a1f" stroke-width="1.5" />
+          </svg>
+          <div class="countdown" role="timer" aria-live="off" aria-label="Tiempo restante para la fiesta">
+            <span id="days" class="countdown__value countdown__value--days">00</span>
+            <span id="hours" class="countdown__value countdown__value--hours">00</span>
+            <span id="minutes" class="countdown__value countdown__value--minutes">00</span>
+            <span id="seconds" class="countdown__value countdown__value--seconds">00</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel--date" aria-labelledby="date-title">
+        <div class="panel__stage">
+          <h2 id="date-title" class="sr-only">Fecha y hora</h2>
+          <img
+            src="assets/fecha-hora.webp?v=20261020-6"
+            alt="La gran noche: 13 de noviembre de 2026, de 21:00 a 05:00 horas"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <button id="calendarButton" class="hotspot hotspot--calendar" type="button">
+            <span class="sr-only">Agregar el evento al calendario</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="panel panel--map" aria-labelledby="map-title">
+        <div class="panel__stage">
+          <h2 id="map-title" class="sr-only">Cómo llegar</h2>
+          <img
+            src="assets/como-llegar.webp?v=20261020-6"
+            alt="Una noche extraordinaria en Janos Hipódromo de San Isidro"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <a
+            class="gold-button gold-button--map"
+            href="https://maps.app.goo.gl/qDz6Qyx7kmiXBBxu6?g_st=iw"
+            target="_blank"
+            rel="noreferrer"
+          >Cómo llegar</a>
+        </div>
+      </section>
+
+      <section class="panel panel--dress-code" aria-labelledby="dress-code-title">
+        <div class="panel__stage">
+          <h2 id="dress-code-title" class="sr-only">Código de vestimenta</h2>
+          <img
+            src="assets/dress-code.webp?v=20261020-6"
+            alt="Dress code elegante"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <div class="shine-glow" aria-hidden="true"><div class="shine shine--ropa"></div></div>
+          <div class="sparkles" id="dressSparkles" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="panel panel--music" aria-labelledby="music-title">
+        <div class="panel__stage">
+          <h2 id="music-title" class="sr-only">La música de mi noche</h2>
+          <img
+            src="assets/musica.webp?v=20261020-6"
+            alt="La música de mi noche. ¿Qué canción no puede faltar?"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <div class="music-notes" id="musicNotes" aria-hidden="true"></div>
+          <a
+            class="hotspot hotspot--music"
+            href="https://open.spotify.com/playlist/4d9rAPM7nk9XkExYONkPQH?si=_vxV5sTwT3-QG-L5QCBaig&amp;utm_source=whatsapp&amp;pt=ca7cd605db8a0265d219189425251db3&amp;pi=y6OHhsbAQb6Mk"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="sr-only">Sugerir canción</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="gallery" aria-labelledby="gallery-title">
+        <div class="gallery__ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+        <h2 id="gallery-title" class="gallery__title">Un poquito de mí</h2>
+        <div class="gallery__track" id="galleryTrack" tabindex="0" aria-label="Fotos de Pilar. Tocá una foto para verla completa">
+          <figure class="gallery__slide">
+            <img src="assets/galeria-1.webp?v=20261020-6" alt="Pilar apoyada en una columna, con vestido blanco y botas" width="1100" height="1650" loading="lazy" style="--focus: 50% 30%" />
+          </figure>
+          <figure class="gallery__slide">
+            <img src="assets/galeria-2.webp?v=20261020-6" alt="Retrato de Pilar sonriendo suavemente" width="1400" height="933" loading="lazy" style="--focus: 61% 40%" />
+          </figure>
+          <figure class="gallery__slide">
+            <img src="assets/galeria-3.webp?v=20261020-6" alt="Pilar girando con su vestido blanco entre columnas" width="1400" height="933" loading="lazy" style="--focus: 55% 45%" />
+          </figure>
+          <figure class="gallery__slide">
+            <img src="assets/galeria-4.webp?v=20261020-6" alt="Pilar junto a una escultura de piedra en el jardín" width="1400" height="933" loading="lazy" style="--focus: 64% 35%" />
+          </figure>
+        </div>
+        <div class="gallery__dots" id="galleryDots" aria-hidden="true"></div>
+        <div class="gallery__ornament gallery__ornament--bottom" aria-hidden="true"><span></span><i></i><span></span></div>
+      </section>
+
+      <section class="panel panel--gifts" aria-labelledby="gifts-title">
+        <div class="panel__stage">
+          <h2 id="gifts-title" class="sr-only">Regalos</h2>
+          <img
+            src="assets/regalos.webp?v=20261020-6"
+            alt="Tu presencia es mi mejor regalo. Si querés hacerme un obsequio, aquí te dejo:"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <button id="openGiftsModal" class="gold-button gold-button--gifts" type="button">Ver datos</button>
+        </div>
+      </section>
+
+      <section class="panel panel--bloomkeep" aria-labelledby="bloomkeep-title">
+        <div class="panel__stage">
+          <h2 id="bloomkeep-title" class="sr-only">BloomKeep</h2>
+          <img
+            src="assets/bloomkeep.webp?v=20261020-6"
+            alt="BloomKeep. Los mejores recuerdos los creamos juntos. Compartí tus fotos de mi gran noche"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <div class="camera-flash" aria-hidden="true">
+            <span class="camera-flash__screen"></span>
+            <span class="camera-flash__burst"></span>
+          </div>
+          <a class="hotspot hotspot--bloomkeep" href="https://app.bloomkeep.site/pilar-15" target="_blank" rel="noreferrer">
+            <span class="sr-only">Subir fotos a BloomKeep</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="panel panel--confirmation" aria-labelledby="confirmation-title">
+        <div class="panel__stage">
+          <h2 id="confirmation-title" class="sr-only">Confirmación de asistencia</h2>
+          <img
+            src="assets/confirmacion.webp?v=20261020-6"
+            alt="¿Venís? Me encantaría compartir esta gran noche con vos. Confirmá tu asistencia hasta el 1 de noviembre"
+            width="941"
+            height="1672"
+            loading="lazy"
+          />
+          <div class="shine-glow shine-glow--p" aria-hidden="true"><div class="shine shine--p"></div></div>
+          <div class="sparkles" id="pSparkles" aria-hidden="true"></div>
+          <a id="boton-confirmar" class="hotspot hotspot--confirmation" aria-disabled="true" target="_blank" rel="noreferrer">
+            <span class="sr-only">Confirmar asistencia</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <img
+          class="closing__photo"
+          src="assets/foto-cierre.webp?v=20261020-6"
+          alt="Pilar en blanco y negro, sonriendo apoyada en una baranda entre columnas"
+          width="735"
+          height="1106"
+          loading="lazy"
+        />
+        <div class="closing__frame" aria-hidden="true"></div>
+        <div class="closing__text">
+          <p class="closing__wait">Te espero</p>
+          <div class="closing__ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+          <h2 id="closing-title" class="closing__name">Pilar</h2>
+        </div>
+      </section>
+
+      <footer class="panel panel--footer" aria-label="BloomDate y redes sociales">
+        <div class="panel__stage">
+          <img
+            src="assets/footer-bloomdate.webp?v=20261020-6"
+            alt="Hecho con amor por BloomDate. WhatsApp, Instagram y sitio web"
+            width="2172"
+            height="724"
+            loading="lazy"
+          />
+          <a
+            class="footer-link footer-link--whatsapp"
+            href="https://wa.me/541140436324"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Contactar a BloomDate por WhatsApp"
+          ></a>
+          <a
+            class="footer-link footer-link--instagram"
+            href="https://www.instagram.com/bloomdate.invitaciones/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Ver BloomDate Invitaciones en Instagram"
+          ></a>
+          <a
+            class="footer-link footer-link--website"
+            href="https://bloomdate-site.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visitar el sitio web de BloomDate"
+          ></a>
+        </div>
+      </footer>
+    </main>
+
+    <dialog id="photoModal" class="photo-modal" aria-label="Foto de Pilar">
+      <figure class="photo-modal__frame">
+        <img id="photoModalImage" src="" alt="" />
+      </figure>
+      <button class="photo-modal__close" type="button" data-close-modal aria-label="Cerrar foto">×</button>
+      <button class="photo-modal__nav photo-modal__nav--prev" type="button" id="photoPrev" aria-label="Foto anterior">‹</button>
+      <button class="photo-modal__nav photo-modal__nav--next" type="button" id="photoNext" aria-label="Foto siguiente">›</button>
+      <p class="photo-modal__count" id="photoCount" aria-live="polite"></p>
+    </dialog>
+
+    <dialog id="giftsModal" class="image-modal image-modal--gifts" aria-label="Datos para regalo">
+      <div class="modal-art">
+        <img
+          src="assets/modal-regalos.webp?v=20261020-6"
+          alt="Datos para tu regalo: alias xvpiluu, titular Cyntia Gabriela Pazos, entidad Mercado Pago"
+          width="1122"
+          height="1402"
+        />
+        <button
+          class="modal-action modal-action--copy-alias"
+          type="button"
+          data-copy="xvpiluu"
+          data-copy-message="Alias copiado"
+        ><span class="sr-only">Copiar alias xvpiluu</span></button>
+        <button class="modal-action modal-action--close-gifts" type="button" data-close-modal>
+          <span class="sr-only">Cerrar</span>
+        </button>
+        <p class="modal-toast" aria-live="polite"></p>
+      </div>
+    </dialog>
+
+    <button
+      id="audioToggle"
+      class="audio-toggle"
+      type="button"
+      aria-label="Reproducir música"
+      aria-pressed="false"
+      hidden
+    >
+      <span class="audio-toggle__note" aria-hidden="true">♫</span>
+      <span class="audio-toggle__state" aria-hidden="true"></span>
+    </button>
+    <audio id="invitationAudio" src="assets/musica.mp3?v=20261020-6" loop preload="metadata"></audio>
+
+    <script src="script.js?v=20261020-6"></script>
+    <script src="preview-invitados.js?v=20261020-6"></script>
+    <script src="invitation-personalization.js?v=20261020-6"></script>
+  </body>
+</html>
