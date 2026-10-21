@@ -1122,7 +1122,7 @@ a {
   50% { transform: translate(-2px, -1px) scale(1.13); }
 }
 
-/* Intro: la portada con dos botones para entrar con o sin música. */
+/* Intro: puertas art déco que se abren hacia la portada al elegir con o sin música. */
 body.intro-is-open {
   overflow: hidden;
   overscroll-behavior: none;
@@ -1155,52 +1155,211 @@ body.intro-is-open {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform: scale(1.08);
   user-select: none;
+}
+
+.intro-doors {
+  position: absolute;
+  inset: 0;
+  perspective: 240cqw;
+}
+
+.intro-doors__defs {
+  position: absolute;
+}
+
+.intro-door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.intro-door--left {
+  left: 0;
+  transform-origin: left center;
+  background:
+    radial-gradient(ellipse 90% 45% at 100% 30%, rgb(227 194 122 / 10%), transparent 70%),
+    linear-gradient(90deg, #020c08, #0a3426 65%, #114a36);
+  box-shadow: inset -0.8cqw 0 1.6cqw rgb(0 0 0 / 55%);
+}
+
+.intro-door--right {
+  right: 0;
+  transform-origin: right center;
+  background:
+    radial-gradient(ellipse 90% 45% at 0% 30%, rgb(227 194 122 / 10%), transparent 70%),
+    linear-gradient(270deg, #020c08, #0a3426 65%, #114a36);
+  box-shadow: inset 0.8cqw 0 1.6cqw rgb(0 0 0 / 55%);
+}
+
+.intro-door svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-door--right svg {
+  transform: scaleX(-1);
+}
+
+/* Un brillo que cruza las puertas de vez en cuando. */
+.intro-door::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgb(247 227 168 / 14%) 50%, transparent 60%);
+  background-size: 400% 100%;
+  animation: intro-door-shimmer 6s 1.2s ease-in-out infinite;
+}
+
+.intro-door--right::after {
+  animation-delay: 1.5s;
+}
+
+.intro-doors__seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0.4cqw;
+  background: linear-gradient(180deg, transparent, var(--gold-light) 25% 75%, transparent);
+  box-shadow: 0 0 3cqw 0.6cqw rgb(247 227 168 / 30%);
+  transform: translateX(-50%);
+  animation: intro-seam-pulse 3.2s ease-in-out infinite;
+}
+
+.intro-seal {
+  position: absolute;
+  top: 25.9%;
+  left: 50%;
+  display: grid;
+  width: 21cqw;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #1a6b4d, var(--emerald) 55%, #062018);
+  box-shadow:
+    0 0 0 0.7cqw var(--gold),
+    0 0 0 1.3cqw var(--ink),
+    0 0 0 1.6cqw var(--gold-dark),
+    0 1cqw 4cqw rgb(0 0 0 / 70%),
+    0 0 7cqw rgb(227 194 122 / 30%);
+  transform: translate(-50%, -50%);
+  animation: intro-seal-in 1s 200ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+.intro-seal span {
+  padding-left: 0.06em;
+  background: linear-gradient(180deg, var(--gold-light) 10%, var(--gold) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Poiret One", "Josefin Sans", sans-serif;
+  font-size: 9cqw;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.intro-title {
+  position: absolute;
+  top: 37%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  animation: intro-fade-up 900ms 500ms ease both;
+}
+
+.intro-title__kicker {
+  margin: 0 0 2cqw;
+  padding-left: 0.5em;
+  color: var(--gold-light);
+  font: 300 4.2cqw/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  text-shadow: 0 0.4cqw 1.6cqw rgb(0 0 0 / 90%);
+}
+
+.intro-title__name {
+  margin: 0;
+  padding-left: 0.12em;
+  background: linear-gradient(180deg, var(--gold-light) 10%, var(--gold) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Poiret One", "Josefin Sans", sans-serif;
+  font-size: 20cqw;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0.6cqw 1.6cqw rgb(0 0 0 / 90%));
 }
 
 .invitation-intro__actions {
   position: absolute;
-  top: 64%;
+  top: 61%;
   left: 50%;
   display: flex;
-  width: 72%;
+  width: 70%;
   flex-direction: column;
   align-items: stretch;
-  gap: 3.2cqw;
+  gap: 3.4cqw;
   transform: translateX(-50%);
-  animation: intro-actions-in 900ms 400ms ease both;
+  animation: intro-actions-in 900ms 800ms ease both;
 }
 
 .invitation-intro__question {
+  display: flex;
+  align-items: center;
+  gap: 2.5cqw;
   margin: 0 0 1cqw;
-  padding: 1.2cqw 0;
-  background: var(--emerald);
   color: var(--gold-light);
   font-family: "Poiret One", "Josefin Sans", sans-serif;
-  font-size: 5.6cqw;
+  font-size: 5.4cqw;
   letter-spacing: 0.04em;
-  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 0.4cqw 1.6cqw rgb(0 0 0 / 90%);
+}
+
+.invitation-intro__question::before,
+.invitation-intro__question::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.invitation-intro__question::after {
+  background: linear-gradient(270deg, transparent, var(--gold));
 }
 
 .intro-action {
   appearance: none;
-  padding: 3.2cqw 2cqw 2.6cqw;
+  padding: 3.4cqw 2cqw 2.8cqw;
   border: 1px solid var(--gold);
   outline: 1px solid rgb(227 194 122 / 45%);
   outline-offset: 0.9cqw;
   background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, var(--gold-dark));
   color: #111;
-  font: 400 4.3cqw/1 "Josefin Sans", sans-serif;
-  letter-spacing: 0.1em;
+  font: 400 4.4cqw/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.14em;
   white-space: nowrap;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: 0 1cqw 3cqw rgb(0 0 0 / 55%);
   -webkit-tap-highlight-color: transparent;
 }
 
 .intro-action--ghost {
-  background: rgb(5 5 5 / 88%);
+  background: rgb(5 5 5 / 78%);
   color: var(--gold-light);
+}
+
+.intro-action:active {
+  transform: translateY(0.3cqw);
 }
 
 .intro-action:focus-visible {
@@ -1212,12 +1371,62 @@ body.intro-is-open {
   cursor: default;
 }
 
+/* Al elegir: se va el sello, se abren las puertas y aparece la portada. */
 .invitation-intro.is-leaving {
-  animation: intro-leave 900ms ease forwards;
+  animation: intro-leave 500ms 1600ms ease forwards;
 }
 
-.invitation-intro.is-leaving .invitation-intro__stage {
-  animation: intro-stage-leave 900ms ease forwards;
+.is-leaving .intro-seal {
+  animation: intro-seal-out 500ms ease forwards;
+}
+
+.is-leaving .intro-title,
+.is-leaving .invitation-intro__actions {
+  animation: intro-fade-out 350ms ease forwards;
+}
+
+.is-leaving .intro-doors__seam {
+  animation: intro-seam-burst 700ms 150ms ease forwards;
+}
+
+.is-leaving .intro-door--left {
+  animation: intro-door-left 1500ms 300ms cubic-bezier(0.55, 0.05, 0.3, 1) forwards;
+}
+
+.is-leaving .intro-door--right {
+  animation: intro-door-right 1500ms 300ms cubic-bezier(0.55, 0.05, 0.3, 1) forwards;
+}
+
+.is-leaving .intro-door::after {
+  animation: none;
+}
+
+.is-leaving .invitation-intro__image {
+  animation: intro-image-in 1800ms 300ms ease-out forwards;
+}
+
+@keyframes intro-door-shimmer {
+  0% { background-position: 100% 0; }
+  40%, 100% { background-position: 0 0; }
+}
+
+@keyframes intro-seam-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes intro-seal-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+@keyframes intro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(3cqw);
+  }
 }
 
 @keyframes intro-actions-in {
@@ -1227,16 +1436,55 @@ body.intro-is-open {
   }
 }
 
-@keyframes intro-leave {
+@keyframes intro-seal-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.35);
+    filter: brightness(1.6);
+  }
+}
+
+@keyframes intro-fade-out {
   to {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-@keyframes intro-stage-leave {
+@keyframes intro-seam-burst {
+  40% {
+    opacity: 1;
+    width: 1.6cqw;
+    box-shadow: 0 0 12cqw 5cqw rgb(247 227 168 / 55%);
+  }
   to {
-    transform: scale(1.06);
+    opacity: 0;
+    width: 3cqw;
+  }
+}
+
+@keyframes intro-door-left {
+  to {
+    transform: rotateY(100deg);
+    filter: brightness(0.4);
+  }
+}
+
+@keyframes intro-door-right {
+  to {
+    transform: rotateY(-100deg);
+    filter: brightness(0.4);
+  }
+}
+
+@keyframes intro-image-in {
+  to { transform: scale(1); }
+}
+
+@keyframes intro-leave {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -1259,6 +1507,10 @@ body.intro-is-open .audio-toggle {
 
   .audio-toggle.is-playing .audio-toggle__note,
   .invitation-intro__actions,
+  .intro-seal,
+  .intro-title,
+  .intro-door::after,
+  .intro-doors__seam,
   .shine,
   .shine-glow {
     animation: none;
@@ -1270,9 +1522,16 @@ body.intro-is-open .audio-toggle {
 
   .invitation-intro.is-leaving {
     animation-duration: 250ms;
+    animation-delay: 0ms;
   }
 
-  .invitation-intro.is-leaving .invitation-intro__stage {
+  .is-leaving .intro-seal,
+  .is-leaving .intro-title,
+  .is-leaving .invitation-intro__actions,
+  .is-leaving .intro-doors__seam,
+  .is-leaving .intro-door--left,
+  .is-leaving .intro-door--right,
+  .is-leaving .invitation-intro__image {
     animation: none;
   }
 }

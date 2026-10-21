@@ -392,7 +392,7 @@ function setupInvitationIntro() {
       intro.remove();
       window.scrollTo(0, 0);
       main?.focus({ preventScroll: true });
-    }, reducedMotion ? 260 : 900);
+    }, reducedMotion ? 260 : 2100);
   };
 
   intro.querySelector("#introWithMusic")?.addEventListener("click", () => enter(true));

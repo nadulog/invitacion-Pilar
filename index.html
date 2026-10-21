@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Jost:wght@400&family=Poiret+One&display=swap"
     />
     <link rel="preload" as="image" href="assets/portada.webp?v=20261020-6" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20261020-7" />
+    <link rel="stylesheet" href="styles.css?v=20261020-8" />
   </head>
   <body class="intro-is-open">
     <div class="invitation-intro" role="dialog" aria-modal="true" aria-label="Bienvenida a los XV de Pilar">
@@ -47,14 +47,55 @@
         <img
           class="invitation-intro__image"
           src="assets/portada.webp?v=20261020-6"
-          alt="Pilar, mis XV"
+          alt=""
           width="941"
           height="1672"
         />
+        <div class="intro-doors" aria-hidden="true">
+          <svg width="0" height="0" class="intro-doors__defs">
+            <defs>
+              <linearGradient id="doorGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f7e3a8" />
+                <stop offset="0.5" stop-color="#e3c27a" />
+                <stop offset="1" stop-color="#a87c35" />
+              </linearGradient>
+              <!-- Media puerta: la bisagra a la izquierda y la unión en x=50. -->
+              <symbol id="doorArt" viewBox="0 0 50 177.7">
+                <g fill="none" stroke="url(#doorGold)" stroke-width="0.35">
+                  <rect x="2.5" y="2.5" width="52" height="172.7" />
+                  <rect x="5" y="5" width="52" height="167.7" stroke-width="0.2" />
+                  <path d="M5 14H9V9H14V5M5 163.7H9V168.7H14V172.7" />
+                  <path d="M16 46A34 34 0 0 1 50 12M20 46A30 30 0 0 1 50 16" />
+                  <path d="M50 46L20 46M50 46L20.46 40.79M50 46L21.81 35.74M50 46L24.02 31M50 46L27.02 26.72M50 46L30.72 23.02M50 46L35 20.02M50 46L39.74 17.81M50 46L44.79 16.46" stroke-width="0.25" />
+                  <path d="M36 166A14 14 0 0 1 50 152M50 166L36.48 162.38M50 166L37.88 159M50 166L40.1 156.1M50 166L43 153.88M50 166L46.38 152.48" stroke-width="0.25" />
+                  <path d="M48.6 60V146M10 52V140M12 56V136" stroke-width="0.18" />
+                  <path d="M10 52L16 46M10 140L16 146" stroke-width="0.18" />
+                </g>
+                <g fill="#e3c27a" opacity="0.14">
+                  <path d="M50 46L20 46A30 30 0 0 1 20.46 40.79Z" />
+                  <path d="M50 46L21.81 35.74A30 30 0 0 1 24.02 31Z" />
+                  <path d="M50 46L27.02 26.72A30 30 0 0 1 30.72 23.02Z" />
+                  <path d="M50 46L35 20.02A30 30 0 0 1 39.74 17.81Z" />
+                  <path d="M50 46L44.79 16.46A30 30 0 0 1 50 16Z" />
+                </g>
+                <path d="M5 85.35L7.6 88.85L5 92.35L2.4 88.85Z" fill="#0d3b2b" stroke="url(#doorGold)" stroke-width="0.3" />
+                <path d="M11 93L12.6 95L11 97L9.4 95Z" fill="url(#doorGold)" />
+              </symbol>
+            </defs>
+          </svg>
+          <div class="intro-door intro-door--left"><svg viewBox="0 0 50 177.7"><use href="#doorArt" /></svg></div>
+          <div class="intro-door intro-door--right"><svg viewBox="0 0 50 177.7"><use href="#doorArt" /></svg></div>
+          <div class="intro-doors__seam"></div>
+        </div>
+        <div class="intro-seal" aria-hidden="true"><span>XV</span></div>
+        <div class="intro-title">
+          <p class="intro-title__kicker">Mis quince</p>
+          <p class="intro-title__name">Pilar</p>
+        </div>
         <div class="invitation-intro__actions">
           <p class="invitation-intro__question">¿Cómo querés entrar?</p>
-          <button id="introWithMusic" class="intro-action" type="button">Entrar con música</button>
-          <button id="introWithoutMusic" class="intro-action intro-action--ghost" type="button">Entrar sin música</button>
+          <button id="introWithMusic" class="intro-action" type="button"><span aria-hidden="true">♪</span> Con música</button>
+          <button id="introWithoutMusic" class="intro-action intro-action--ghost" type="button">Sin música</button>
         </div>
       </div>
     </div>
@@ -356,7 +397,7 @@
     </button>
     <audio id="invitationAudio" src="assets/musica.mp3?v=20261020-6" loop preload="metadata"></audio>
 
-    <script src="script.js?v=20261020-6"></script>
+    <script src="script.js?v=20261020-8"></script>
     <script src="preview-invitados.js?v=20261020-6"></script>
     <script src="invitation-personalization.js?v=20261020-6"></script>
   </body>
